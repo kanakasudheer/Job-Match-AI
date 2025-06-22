@@ -26,12 +26,12 @@ Job Match AI is an intelligent job matching platform built with Streamlit, spaCy
 
 ### 1. Clone the repository
 ```bash
-git clone <your-repo-url>
-cd <project-folder>
+git clone https://github.com/kanakasudheer/Job-Match-AI.git
+
 ```
 
 
-### 2. Download spaCy model
+### 2. Download commands
 ```bash
 pip install streamlit pandas numpy spacy pdfplumber python-docx scikit-learn sentence-transformers matplotlib seaborn streamlit-tags
 python -m spacy download en_core_web_lg
@@ -39,7 +39,7 @@ python -m spacy download en_core_web_lg
 
 ### 3. Run the app
 ```bash
-streamlit run job_match.py OR python -m streamlit run job_match.py
+streamlit run job_match.py  (OR)  python -m streamlit run job_match.py
 ```
 
 ## Usage
@@ -50,7 +50,6 @@ streamlit run job_match.py OR python -m streamlit run job_match.py
 
 ## File Structure
 - `job_match.py` - Main Streamlit app
-- `requirements.txt` - Python dependencies
 - `README.md` - Project documentation
 
 ## License
