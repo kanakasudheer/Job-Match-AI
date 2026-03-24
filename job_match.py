@@ -507,21 +507,20 @@ elif page == "Candidate Portal":
             with st.expander(f"👤 {candidate['name']} - {candidate['job_title']}"):
                 st.write(f"**Location:** {candidate['location']}")
                 st.write(f"**Experience:** {candidate['experience']} years")
-                st.write(f"**Education:** {candidate['education']}")
                 
                 if candidate.get('skills'):
                     st.write("**Skills:** " + ", ".join(candidate['skills']))
                 
                 # Resume suggestions
                 if candidate.get('resume_text'):
-                    with st.expander("AI Resume Assistant"):
-                        suggestions = generate_resume_suggestions(candidate)
-                        if suggestions:
-                            st.warning("Resume Improvement Suggestions:")
-                            for suggestion in suggestions:
-                                st.write(f"- {suggestion}")
-                        else:
-                            st.success("Your resume looks strong! Good job highlighting your skills and experience.")
+                    st.subheader("AI Resume Assistant")
+                    suggestions = generate_resume_suggestions(candidate)
+                    if suggestions:
+                        st.warning("Resume Improvement Suggestions:")
+                        for suggestion in suggestions:
+                            st.write(f"- {suggestion}")
+                    else:
+                        st.success("Your resume looks strong! Good job highlighting your skills and experience.")
                 
                 if st.button("Delete Profile", key=f"del_{candidate['id']}"):
                     st.session_state.candidates = [c for c in st.session_state.candidates if c['id'] != candidate['id']]
